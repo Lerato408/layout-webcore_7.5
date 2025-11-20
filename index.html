@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-      <div class="brand__container">
+       <div class="brand__container">
              <header class="header">REPAIR EQUIPMENT FROM VARIOUS BRANDS</header>
                 <main class="swiper-container swiper">
                     <div class="swiper-wrapper">
@@ -102,40 +102,44 @@
                             </span>
                         </div> 
                     </div>
-                    <button class="brand__container-toggle">
-                        <img src="icons/ExpandIcon.svg" alt="expand icon" class="content__read-more--img"/>
-                        show all
-                    </button>
+                    
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </main>
-    <script>
-        // Initialize Swiper with responsive breakpoints
-        const swiper = new Swiper(".swiper", {
-          slidesPerView: 1.5,
-          spaceBetween: 20,
-          loop: true,
-          pagination: { el: ".swiper-pagination" },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-          },
-          allowTouchMove: true,
+                <button class="brand__container-toggle">
+                        <img src="icons/ExpandIcon.svg" alt="expand icon" class="content__read-more--img"/>
+                        show all
+                </button>
+           <script>
+               // Initialize Swiper with responsive breakpoints
+               const swiper = new Swiper(".swiper", {
+               slidesPerView: 1.5,
+               spaceBetween: 20,
+               loop: true,
+               pagination: { 
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+               navigation: {
+               nextEl: ".swiper-button-next",
+               prevEl: ".swiper-button-prev"
+             },
+             allowTouchMove: true,
           
-          }
-        );
+                }
+             );
 
-      const btn = document.querySelector('.brand__container-toggle');
-      const list = document.querySelector('.swiper-wrapper');
+              const btn = document.querySelector('.brand__container-toggle');
+              const list = document.querySelector('.swiper-container');
 
-      if (btn && list) {
-        btn.addEventListener('click', () => {
-          list.classList.toggle('expanded');
-          btn.textContent = list.classList.contains('expanded') ? "Hide" : "Show all";
-        });
-      }
-    </script>
+              if (btn && list) {
+              btn.addEventListener('click', () => {
+              list.classList.toggle('expanded');
+               btn.textContent = list.classList.contains('expanded') ? "Hide" : "Show all";
+             });
+             }
+            </script>
        </div>
     </body>
 </html>
