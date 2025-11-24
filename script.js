@@ -16,7 +16,7 @@
                 }
              );
 
-              const btn = document.querySelector('.brand__container-toggle');
+              const btn = document.querySelector('.container-toggle');
               const list = document.querySelector('.swiper-container');
 
               if (btn && list) {
