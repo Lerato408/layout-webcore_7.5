@@ -17,11 +17,22 @@
              );
 
               const btn = document.querySelector('.container-toggle');
+              const label = btn.querySelector('.label');
+              const arrow = btn.querySelector('.content__arrow--img');
               const list = document.querySelector('.swiper-container');
 
               if (btn && list) {
               btn.addEventListener('click', () => {
               list.classList.toggle('expanded');
-               btn.textContent = list.classList.contains('expanded') ? "Hide" : "Show all";
+              
+
+                  if (list.classList.contains('expanded')) {
+                  label.textContent = "Hide";
+                   arrow.classList.add('rotated');
+                 } 
+                 else {
+                 label.textContent = "Show all";
+                 arrow.classList.remove('rotated');
+               }
              });
              }
