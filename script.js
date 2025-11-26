@@ -1,20 +1,45 @@
  // Initialize Swiper with responsive breakpoints
-               const swiper = new Swiper(".swiper", {
-               slidesPerView: 1.5,
-               spaceBetween: 20,
-               loop: true,
-               pagination: { 
-                 el: ".swiper-pagination",
-                clickable: true, 
-            },
-               navigation: {
-               nextEl: ".swiper-button-next",
-               prevEl: ".swiper-button-prev"
-              },
-             allowTouchMove: true,
-          
-                }
-             );
+            
+    let swiper = null;
+
+function enableSwiper() {
+  swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1.5,
+    spaceBetween: 15,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+}
+
+function disableSwiper() {
+  if (swiper !== null) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
+}
+
+function checkWidth() {
+  const width = window.innerWidth;
+
+  if (width < 768) {
+    // MOBILE — we want swiper
+    if (!swiper) {
+      enableSwiper();
+    }
+  } else {
+    // TABLET & DESKTOP — no swiper
+    disableSwiper();
+  }
+}
+
+// Run on load
+window.addEventListener('load', checkWidth);
+
+// Run on resize
+window.addEventListener('resize', checkWidth);
+
 
               const btn = document.querySelector('.container-toggle');
               const label = btn.querySelector('.label');
