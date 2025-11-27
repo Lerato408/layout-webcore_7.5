@@ -11,8 +11,6 @@
 }
 
 .brand__container {
-    max-width: 100%;
-    height: 100%;
     margin: 0 auto;
     background: rgb(246, 244, 244);
     padding-bottom: 20px;
@@ -52,9 +50,8 @@
 .swiper-wrapper {
     display: flex;
     align-items: center;
-    height: 95%;
     gap: 15px;
-    padding-left: 10px;
+ 
 }
 
 .swiper-slide{
@@ -77,7 +74,6 @@
     font-size: 15px;
     background: white;
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 10px;
 }
@@ -123,6 +119,7 @@
     border-radius: 0px;
     text-decoration: none;
     transition: all 0.3s  ease;
+    background-color: rgb(248, 245, 245);
 }
 
 .content__arrow--img:hover {
@@ -135,7 +132,7 @@
     transform: rotate(180deg);
 }
 
-@media (min-width: 320px){
+@media (min-width: 300px){
     .container-toggle {
     display:none
     }
@@ -145,23 +142,22 @@
 
 @media (min-width: 760px) {
     .brand__container {
-        display: grid;
         margin: 5px auto;
     }
 
   
 
     .swiper-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    transition: max-height 0.4s ease;
-    max-height: 255px; 
-    overflow: hidden;
-  }
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     transition: max-height 0.4s ease;
+     max-height: 255px; 
+     overflow: hidden;
+    }
 
-  .swiper-container.expanded .swiper-wrapper {
-    max-height: 1000px; 
-  }
+    .swiper-container.expanded .swiper-wrapper {
+      max-height: 1000px; 
+    }
 
     .swiper-slide {
      width: auto !important;
@@ -201,7 +197,6 @@
 
  .brand__container {
         display: block;
-        margin: 10px auto;
           
     }
 
@@ -212,17 +207,17 @@
 
     .swiper-container.expanded {
     display:grid;
-  }
-
-    .container-toggle {
-        margin-left: 100px;
     }
 
-     .content__arrow--img {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-}
+    .container-toggle {
+     margin-left: 50px;
+    }
+
+    .content__arrow--img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
 }
 
 

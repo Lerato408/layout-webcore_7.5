@@ -1,5 +1,4 @@
- // Initialize Swiper with responsive breakpoints
-            
+           
     let swiper = null;
 
 function enableSwiper() {
@@ -24,40 +23,36 @@ function checkWidth() {
   const width = window.innerWidth;
 
   if (width < 768) {
-    // MOBILE — we want swiper
     if (!swiper) {
       enableSwiper();
     }
-  } else {
-    // TABLET & DESKTOP — no swiper
+  } 
+  else {
     disableSwiper();
   }
 }
 
-// Run on load
+
 window.addEventListener('load', checkWidth);
 
-// Run on resize
 window.addEventListener('resize', checkWidth);
 
 
-              const btn = document.querySelector('.container-toggle');
-              const label = btn.querySelector('.label');
-              const arrow = btn.querySelector('.content__arrow--img');
-              const list = document.querySelector('.swiper-container');
+const btn = document.querySelector('.container-toggle');
+const label = btn.querySelector('.label');
+const arrow = btn.querySelector('.content__arrow--img');
+const list = document.querySelector('.swiper-container');
 
-              if (btn && list) {
-              btn.addEventListener('click', () => {
-              list.classList.toggle('expanded');
-              
-
-                  if (list.classList.contains('expanded')) {
-                  label.textContent = "Hide";
-                   arrow.classList.add('rotated');
-                 } 
-                 else {
+if (btn && list) {
+ btn.addEventListener('click', () => {
+   list.classList.toggle('expanded');          
+    if (list.classList.contains('expanded')) {
+                   label.textContent = "Hide";
+                  arrow.classList.add('rotated');
+                } 
+                else {
                  label.textContent = "Show all";
                  arrow.classList.remove('rotated');
-               }
-             });
-             }
+                }
+  });
+ }
